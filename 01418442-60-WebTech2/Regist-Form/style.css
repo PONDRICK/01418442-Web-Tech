@@ -1,0 +1,64 @@
+body {
+  overflow: hidden;
+  margin: 0;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  font-family: "Kanit", sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #333;
+  background-color: #0f8a5f;
+  background-image: url("https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExeTg5ZzR4bmx3Z3ZsYTZmMWQzcmYyN2g2Nzd1d2J2NGxha2o2b2kxdCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/tIHktzgRi8yjIplFVI/giphy.gif");
+  background-size: cover;
+  background-position: center;
+}
+
+form {
+  background-color: rgba(255, 255, 255, 0.8);
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+}
+
+label {
+  display: block;
+  margin-top: 5px;
+  color: #333;
+}
+
+input[type="text"],
+select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  font-family: "Kanit", sans-serif;
+}
+
+input[type="submit"] {
+  background-color: #f5624d;
+  color: #eee;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 15px;
+  font-family: "Kanit", sans-serif;
+  text-transform: uppercase;
+}
+
+input[type="submit"]:hover {
+  background-color: #cc231e;
+}
+
+h1 {
+  color: #235e6f;
+  font-size: 32px;
+  text-align: center;
+}
