@@ -52,7 +52,7 @@ document.querySelector(".check").addEventListener("click", () => {
       }
       document.querySelector(".score").textContent = score;
     } else {
-      document.querySelector(".message").textContent = "GAME OVER";
+      document.querySelector(".message").textContent = "GAME OVER!!";
     }
   }
 });
