@@ -1,3 +1,16 @@
+const account1 = {
+  owner: "Prayuth Snow",
+  user: "yuth",
+  psw: "1111",
+};
+const account2 = {
+  owner: "Lisa Lazoo",
+  user: "lisa",
+  psw: "abcd",
+};
+
+const accounts = [account1, account2];
+
 document.querySelector(".login__btn").addEventListener("click", (e) => {
   e.preventDefault();
   const username = document.querySelector(".login__input--user").value;
