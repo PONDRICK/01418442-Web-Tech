@@ -65,3 +65,7 @@ document.querySelector(".restratBtn").addEventListener("click", () => {
   document.querySelector(".message").textContent = "เอ้า!! ทายมา";
   console.log("คำตอบ คือ " + machineNumber);
 });
+
+document.querySelector(".secret").addEventListener("click", () => {
+  document.querySelector(".secret").textContent = machineNumber;
+});
