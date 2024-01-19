@@ -8,6 +8,8 @@
 body {
   background-color: #b4d4ff;
   text-align: center;
+  display: flex;
+  align-items: center;
 }
 .left {
   display: contents;
@@ -49,6 +51,8 @@ header {
 .guess {
   outline: none;
   height: 25px;
+  text-align: center;
+  width: 100px;
 }
 .secret {
   background-color: #fff;
@@ -63,9 +67,4 @@ header {
   border-radius: 50%;
   margin-top: 20px;
   margin-bottom: 20px;
-}
-
-.guess {
-  text-align: center;
-  width: 100px;
 }
