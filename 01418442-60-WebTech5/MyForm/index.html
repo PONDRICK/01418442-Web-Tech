@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>My Form 😏</title>
+  </head>
+  <body>
+    <div class="container">
+      <form action="" id="myForm" class="myForm">
+        <h2>แบบฟอร์ม</h2>
+        <div class="frmDiv">
+          <label for="username">ชื่อผู้ใช้</label>
+          <input type="text" name="username" id="username" /><small
+            >Error Message</small
+          >
+        </div>
+        <div class="frmDiv">
+          <label for="email">อีเมล</label>
+          <input type="text" name="email" id="email" /><small
+            >Error Message</small
+          >
+        </div>
+        <div class="frmDiv">
+          <label for="password">รหัสผ่าน</label>
+          <input type="password" name="password" id="password" /><small
+            >Error Message</small
+          >
+        </div>
+        <div class="frmDiv">
+          <label for="confirm">ยืนยันรหัสผ่าน</label>
+          <input type="password" name="confirm" id="confirm" /><small id="error"
+            >รหัสผ่านไม่ตรงกัน</small
+          >
+          <button type="submit" class="submitBtn">ลงทะเบียน</button>
+        </div>
+      </form>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
