@@ -25,4 +25,30 @@ h1 {
 th {
   color: #fff;
   font-weight: bold;
+  align-items: center;
+  text-align: center; 
+  vertical-align: middle; 
+}
+
+table {
+  border-color: #000;
+  align-items: center;
+  table-layout: fixed; 
+}
+
+td {
+  background-color: #fff;
+  align-items: center;
+  text-align: center; 
+  vertical-align: middle;
+  width: 200px;
+  height: 40px;
+}
+
+tr:nth-child(even) td {
+  background-color: #AC87C5;
+}
+
+tr:nth-child(odd) td {
+  background-color: #fff;
 }

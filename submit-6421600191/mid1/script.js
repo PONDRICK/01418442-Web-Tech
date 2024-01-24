@@ -88,3 +88,17 @@ const tableData = [
     points: 31,
   },
 ];
+
+const tableBody = document.getElementById("leagueTable");
+
+for (const data of tableData) {
+  const row = document.createElement("tr");
+
+  for (const key in data) {
+    const cell = document.createElement("td");
+    cell.textContent = data[key];
+    row.appendChild(cell);
+  }
+
+  tableBody.appendChild(row);
+}
