@@ -41,12 +41,11 @@ td {
   align-items: center;
   text-align: center; 
   vertical-align: middle;
-  width: 200px;
   height: 40px;
 }
 
 tr:nth-child(even) td {
-  background-color: #AC87C5;
+  background-color: #A367B1;
 }
 
 tr:nth-child(odd) td {
