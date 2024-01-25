@@ -12,7 +12,7 @@ body {
   background-color: #f4f4f4;
 }
 
-nav {
+ nav { /*ใช้กำหนด Style สำหรับ Element Navigation Bar ซึ่งจะมี background-color เป็น white และมี border-radius เป็น 5px ซึ่งจะทำให้ Element นี้มีรูปร่าง rounded */
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -21,12 +21,12 @@ nav {
 }
 
 h1,
-h2 {
+h2 { 
   color: #333;
   margin: 20px;
 }
 
-button {
+ button { /*ใช้กำหนด Style สำหรับ Element Button ซึ่งจะมี background-color เป็น purple และ color เป็น white ซึ่งเมื่อ User cursor เข้ามาที่ Element นี้ ก็จะมี border เป็น solid gray */
   font-family: "IBM Plex Sans Thai", sans-serif;
   border-radius: 5px;
   background-color: #9D76C1;
@@ -39,11 +39,11 @@ button {
   outline: none;
 }
 
-th {
+ th { /*ใช้กำหนด Style สำหรับ Header ของ Table ซึ่งจะมี color เป็น white */
   color: #fff;
 }
 
-td {
+ td { /*ใช้กำหนด Style สำหรับ Column ของ Table ซึ่งจะมี background-color เป็น white และ text-align เป็น center ซึ่งจะทำให้ข้อความใน Column นี้อยู่กึ่งกลาง */
   background-color: #fff;
   align-items: center;
   text-align: center; 
@@ -51,7 +51,7 @@ td {
   height: 40px;
 }
 
-input {
+ input {/*ใช้กำหนด Style สำหรับ Element Input ซึ่งจะมี border เป็น solid gray และ padding เป็น 10px ซึ่งจะทำให้ User สามารถพิมพ์ข้อมูลเข้าไปใน Element นี้ได้ */
   font-family: "IBM Plex Sans Thai", sans-serif;
   border: 1px solid #ddd;
   border-radius: 5px;
