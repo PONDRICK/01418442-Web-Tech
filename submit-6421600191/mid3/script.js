@@ -62,7 +62,6 @@ let guessedWord = [];
 let incorrectGuesses = 0;
 const maxIncorrectGuesses = 6;
 
-// Function to start a new game
 function newGame() {
   selectedWord = words[Math.floor(Math.random() * words.length)];
   guessedWord = Array(selectedWord.length).fill("_");
@@ -71,7 +70,6 @@ function newGame() {
   updateDisplay();
 }
 
-// Function to update the display
 function updateDisplay() {
   document.getElementById("word").innerText = guessedWord.join(" ");
   document.getElementById("letters").innerHTML = generateAlphabetButtons();
@@ -79,7 +77,6 @@ function updateDisplay() {
   document.getElementById("playAgain").style.display = "none";
 }
 
-// Function to generate alphabet buttons
 function generateAlphabetButtons() {
   const alphabet = "abcdefghijklmnopqrstuvwxyz";
   let buttonsHTML = "";
@@ -91,7 +88,6 @@ function generateAlphabetButtons() {
   return buttonsHTML;
 }
 
-// Function to handle a guess
 function guess(letter) {
   if (selectedWord.includes(letter)) {
     for (let i = 0; i < selectedWord.length; i++) {
@@ -106,7 +102,6 @@ function guess(letter) {
   checkGameStatus();
 }
 
-// Function to check the game status (win/lose)
 function checkGameStatus() {
   if (guessedWord.join("") === selectedWord) {
     document.getElementById("message").innerText =
@@ -122,10 +117,8 @@ function checkGameStatus() {
   }
 }
 
-// Function to reset the game
 function resetGame() {
   newGame();
 }
 
-// Start a new game when the page loads
 window.onload = newGame;
