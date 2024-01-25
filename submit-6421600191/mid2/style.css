@@ -29,7 +29,7 @@ h2 {
  button { /*ใช้กำหนด Style สำหรับ Element Button ซึ่งจะมี background-color เป็น purple และ color เป็น white ซึ่งเมื่อ User cursor เข้ามาที่ Element นี้ ก็จะมี border เป็น solid gray */
   font-family: "IBM Plex Sans Thai", sans-serif;
   border-radius: 5px;
-  background-color: #9D76C1;
+  background-color: #726486;
   width: 500px;
   height: 50px;
   color: #fff;
@@ -54,10 +54,15 @@ h2 {
  input {/*ใช้กำหนด Style สำหรับ Element Input ซึ่งจะมี border เป็น solid gray และ padding เป็น 10px ซึ่งจะทำให้ User สามารถพิมพ์ข้อมูลเข้าไปใน Element นี้ได้ */
   font-family: "IBM Plex Sans Thai", sans-serif;
   border: 1px solid #ddd;
+  background: #E8F0FE;
   border-radius: 5px;
   width: 450px;
   padding: 10px;
   margin-bottom: 10px;
   font-size: 16px;
   outline: none;
+}
+
+input:hover {
+  background: #E8F0FE;
 }
