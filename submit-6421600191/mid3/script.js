@@ -57,68 +57,99 @@ const words = [
   "pomelo",
 ];
 
-let selectedWord = "";
+const letterDiv = document.getElementById("letters"); // เลือก elements จาก html
+const wordDiv = document.getElementById("word");
+const messageDiv = document.getElementById("message");
+const playAgainButton = document.getElementById("playAgain");
+
+let selectedWord = ""; // กำหนดค่าว่างของคำและจำนวนครั้งที่เดาคำ
 let guessedWord = [];
-let incorrectGuesses = 0;
-const maxIncorrectGuesses = 6;
+let attemptsLeft = 6;
 
-function newGame() {
-  selectedWord = words[Math.floor(Math.random() * words.length)];
-  guessedWord = Array(selectedWord.length).fill("_");
-  incorrectGuesses = 0;
+const resetGame = () => {
+  // ฟังก์ชันเริ่มเกมใหม่ run ฟังก์อื่นๆใหม่ทั้งหมด
+  attemptsLeft = 6;
+  initGame();
+  hideButton(playAgainButton);
+};
 
-  updateDisplay();
-}
+const getRandomWord = () => {
+  // ฟังก์ชันสุ่มคำจาก array words
+  return words[Math.floor(Math.random() * words.length)];
+};
 
-function updateDisplay() {
-  document.getElementById("word").innerText = guessedWord.join(" ");
-  document.getElementById("letters").innerHTML = generateAlphabetButtons();
-  document.getElementById("message").innerText = "";
-  document.getElementById("playAgain").style.display = "none";
-}
+const displayWord = () => {
+  // ฟังก์ชันแสดงตัวอักษรที่เดาถูก
+  wordDiv.textContent = guessedWord.join(" ");
+};
 
-function generateAlphabetButtons() {
-  const alphabet = "abcdefghijklmnopqrstuvwxyz";
-  let buttonsHTML = "";
+const updateMessage = (message) => {
+  // ฟังก์ชันแสดงข้อความสถานะเกม
+  messageDiv.textContent = message;
+};
 
-  for (let letter of alphabet) {
-    buttonsHTML += `<button onclick="guess('${letter}')">${letter}</button>`;
-  }
+const guessLetter = (letter) => {
+  // ฟังก์ชันเลือกปุ่มตัวอักษร แสดงข้อความชนะ-แพ้ จำนวนครั้งที่เดา และแสดงปุ่มให้เล่นอีกครั้ง
+  if (attemptsLeft > 0) {
+    if (selectedWord.includes(letter)) {
+      // Correct guess
+      for (let i = 0; i < selectedWord.length; i++) {
+        if (selectedWord[i] === letter) {
+          guessedWord[i] = letter;
+        }
+      }
+      displayWord();
 
-  return buttonsHTML;
-}
+      if (!guessedWord.includes("_")) {
+        // All letters guessed, player wins
+        updateMessage("Congratulations! You've won!");
+        showButton(playAgainButton);
+      }
+    } else {
+      // Incorrect guess
+      attemptsLeft--;
+      updateMessage(`Incorrect guess. Attempts left: ${attemptsLeft}`);
 
-function guess(letter) {
-  if (selectedWord.includes(letter)) {
-    for (let i = 0; i < selectedWord.length; i++) {
-      if (selectedWord[i] === letter) {
-        guessedWord[i] = letter;
+      if (attemptsLeft === 0) {
+        // No attempts left, player loses
+        updateMessage(`Game over! The word was ${selectedWord}`);
+        showButton(playAgainButton);
       }
     }
   } else {
-    incorrectGuesses++;
+    // Game already over
+    updateMessage("Game over. Please click 'Play Again' to restart.");
+    showButton(playAgainButton);
   }
+};
 
-  checkGameStatus();
+const initGame = () => {
+  // ฟังก์ชันตัวเกมที่เรียก การสุ่มคำและแสดงคำศัพท์
+  selectedWord = getRandomWord();
+  guessedWord = Array(selectedWord.length).fill("_");
+  displayWord();
+  updateMessage("");
+  console.log(selectedWord);
+};
+
+initGame();
+
+// ใช้ for loop สร้างปุ่ม A-Z ใน letterDiv
+for (let i = 97; i <= 122; i++) {
+  const button = document.createElement("button");
+  button.innerText = String.fromCharCode(i).toUpperCase();
+  letterDiv.appendChild(button);
+  button.addEventListener("click", (e) => guessLetter(String.fromCharCode(i)));
 }
 
-function checkGameStatus() {
-  if (guessedWord.join("") === selectedWord) {
-    document.getElementById("message").innerText =
-      "Congratulations! You guessed the word!";
-    document.getElementById("playAgain").style.display = "block";
-  } else if (incorrectGuesses >= maxIncorrectGuesses) {
-    document.getElementById(
-      "message"
-    ).innerText = `Sorry, you lost. The correct word was "${selectedWord}".`;
-    document.getElementById("playAgain").style.display = "block";
-  } else {
-    updateDisplay();
-  }
-}
+const showButton = (button) => {
+  // ฟังก์ชันแสดงปุ่มให้กด
+  button.style.display = "block";
+};
 
-function resetGame() {
-  newGame();
-}
-
-window.onload = newGame;
+const hideButton = (button) => {
+  // ฟังก์ชันซ่อนปุ่มไม่ให้กด
+  button.style.display = "none";
+};
+// ใช้ eventlistener กับปุ่ม play again ด้วย ฟังก์ชัน resetGame
+playAgainButton.addEventListener("click", resetGame);
