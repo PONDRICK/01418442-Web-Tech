@@ -19,3 +19,7 @@ button {
 #message {
   margin: 10px;
 }
+
+.playAgain.Btn {
+  display: block;
+}
