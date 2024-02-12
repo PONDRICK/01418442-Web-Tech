@@ -18,6 +18,8 @@ const getCountry = function (country) {
             <div class="country_data">
                 <h3 class="country_name">${data.name.common}</h3>
                 <h4 class="country_region">${data.region}</h4>
+                <p class="country_row">🗣️</span> ${Object.values(data.languages)}</p>
+                <p class="country_row">💰</span> ${Object.values(data.currencies)[0].name}</p>
             </div>
         </article>`;
 		countries.insertAdjacentHTML("beforeend", html);
