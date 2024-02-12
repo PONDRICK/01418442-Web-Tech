@@ -9,7 +9,7 @@ const getCountry = function (country) {
 
 	const html = `
     <article class="country">
-        <img src="่jp.png" alt="" class="country_img" />
+        <img src="jp.png" alt="" class="country_img" />
         <div class="country_data">
             <h3 class="country_name">Japan</h3>
             <h4 class="country_region">Asia</h4>
