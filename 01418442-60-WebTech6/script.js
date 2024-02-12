@@ -14,19 +14,20 @@ const getCountry = function (country) {
       const [data] = JSON.parse(this.responseText);
       const html = `
         <article class="country">
-          <img src="${
-            data.flags.png
-          }" alt="${country} flag" class="country_img" />
-          <div class="country_data">
-            <h3 class="country_name">${data.name.common}</h3>
-            <h4 class="country_region">${data.region}</h4>
-            <p class="country_row"><span>🗣️</span>${Object.values(
-              data.languages
-            ).join(", ")}</p>
-            <p class="country_row"><span>💵</span>${
-              Object.values(data.currencies)[0].name
-            }</p>
-          </div>
+            <img src="${data.flags.png}" alt="" class="country_img" />
+            <div class="country_data">
+                <h3 class="country_name">${data.name.common}</h3>
+                <h4 class="country_region">${data.region}</h4>
+                <p class="country_row">🗣️</span> ${Object.values(
+                  data.languages
+                )}</p>
+                <p class="country_row">💰</span> ${
+                  Object.values(data.currencies)[0].name
+                }</p>
+                <p class="country_row">🧑‍🤝‍🧑</span> ${data.population}</p>
+                <p class="country_row">🏡</span> ${data.borders}</p>
+                <p class="country_row">🗼</span> ${data.capital}</p>
+            </div>
         </article>`;
       countries.insertAdjacentHTML("beforeend", html);
       countries.style.opacity = 1;
