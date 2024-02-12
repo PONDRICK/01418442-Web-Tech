@@ -20,6 +20,9 @@ const getCountry = function (country) {
                 <h4 class="country_region">${data.region}</h4>
                 <p class="country_row">🗣️</span> ${Object.values(data.languages)}</p>
                 <p class="country_row">💰</span> ${Object.values(data.currencies)[0].name}</p>
+                <p class="country_row">💰</span> ${Object.values(data.population)}</p>
+                <p class="country_row">💰</span> ${Object.values(data.borders)}</p>
+                <p class="country_row">🏢</span> ${Object.values(data.capital)}</p>
             </div>
         </article>`;
 		countries.insertAdjacentHTML("beforeend", html);
@@ -30,7 +33,7 @@ getCountry("japan");
 getCountry("USA");
 getCountry("France");
 getCountry("Egypt");
-getCountry("Australia")
+getCountry("Australia");
 // const emptySpace = document.querySelector(".space");
 
 // const html = `<h2>New Message:</h2><p>this is a message from script</p>`;
