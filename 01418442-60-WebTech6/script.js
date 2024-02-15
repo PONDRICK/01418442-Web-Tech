@@ -5,6 +5,25 @@ const countryInput = document.getElementById("countryInput");
 const searchBtn = document.getElementById("searchBtn");
 const regionSelect = document.getElementById("regionSelect");
 
+const regionBackgrounds = {
+  Africa: "sunrise.gif",
+  Americas: "snow.gif",
+  Asia: "rainny.gif",
+  Europe: "cloudy.gif",
+  Oceania: "storm.gif",
+};
+
+// Function to change background image
+function changeBackground(region) {
+  const background = regionBackgrounds[region];
+  if (background) {
+    document.body.style.backgroundImage = `url(${background})`;
+  } else {
+    // If no background image found for the selected region, set default background
+    document.body.style.backgroundImage = "none";
+  }
+}
+
 const getCountry = function (country) {
   const req = new XMLHttpRequest();
   req.open("GET", `https://restcountries.com/v3.1/name/${country}`);
@@ -64,6 +83,17 @@ searchBtn.addEventListener("click", function () {
         console.error("Failed to fetch countries by region");
       }
     });
+  }
+});
+
+// Event listener for the region select dropdown
+regionSelect.addEventListener("change", function () {
+  const selectedRegion = regionSelect.value;
+  if (selectedRegion) {
+    changeBackground(selectedRegion);
+  } else {
+    // If no region selected, set default background
+    document.body.style.backgroundImage = "none";
   }
 });
 

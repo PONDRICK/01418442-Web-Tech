@@ -4,33 +4,40 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>web-001</title>
-    <script defer src="script.js"></script>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="space"></div>
-    <main class="contianer">
-      <div class="input_text_country">
-        <input
-          type="text"
-          id="countryInput"
-          placeholder="Type a country name"
-        />
-        <button id="searchBtn">Search</button>
-      </div>
-      <div class="region_filter">
-        <select id="regionSelect">
-          <option value="">Filter by Region</option>
-          <option value="Africa">Africa</option>
-          <option value="Americas">Americas</option>
-          <option value="Asia">Asia</option>
-          <option value="Europe">Europe</option>
-          <option value="Oceania">Oceania</option>
-        </select>
-      </div>
-      <div class="countries">
-        <article class="country"></article>
-      </div>
-    </main>
+    <nav>
+      <h1>COUNTRY API</h1>
+      <br />
+      <div class="space"></div>
+      <main class="container">
+        <div class="input_text_country">
+          <input
+            type="text"
+            id="countryInput"
+            placeholder="Type a country name"
+          />
+          <button id="searchBtn">Search</button>
+        </div>
+        <br />
+        <div class="region_filter">
+          <select id="regionSelect">
+            <option value="">Filter by Region</option>
+            <option value="Africa">Africa</option>
+            <option value="Americas">Americas</option>
+            <option value="Asia">Asia</option>
+            <option value="Europe">Europe</option>
+            <option value="Oceania">Oceania</option>
+          </select>
+        </div>
+        <br /><br /><br /><br />
+        <div class="countries">
+          <article class="country"></article>
+        </div>
+      </main>
+    </nav>
+
+    <script defer src="script.js"></script>
   </body>
 </html>
