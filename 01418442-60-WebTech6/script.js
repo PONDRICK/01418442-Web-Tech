@@ -17,7 +17,10 @@ const regionBackgrounds = {
 function changeBackground(region) {
   const background = regionBackgrounds[region];
   if (background) {
+    // Set background image to cover entire body
     document.body.style.backgroundImage = `url(${background})`;
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundRepeat = "no-repeat";
   } else {
     // If no background image found for the selected region, set default background
     document.body.style.backgroundImage = "none";

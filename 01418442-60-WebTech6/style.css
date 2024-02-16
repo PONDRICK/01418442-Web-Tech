@@ -23,13 +23,16 @@ body {
 }
 
 nav {
-  background-color: #eef5ff;
+  background-color: transparent;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 60px;
-  width: 550px;
-  height: 300px;
+  width: 100%; /* กำหนดให้กว้างเต็มขอบจอ */
+  height: 100vh; /* กำหนดให้สูงเต็มหน้าจอ */
   margin-top: 20px;
+  background-image: url("ชื่อภาพ.gif"); /* เพิ่ม background-image ที่นี่ */
+  background-size: cover; /* กำหนดให้ภาพปรับขนาดให้เต็มพื้นที่ของ <nav> */
+  background-position: center; /* กำหนดให้ภาพจัดตำแหน่งตรงกลาง */
 }
 
 .container {
