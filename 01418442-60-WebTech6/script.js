@@ -12,7 +12,21 @@ const regionBackgrounds = {
   Europe: "cloudy.gif",
   Oceania: "storm.gif",
 };
-
+const regionSongs = {
+  Africa: "africa_song.mp3",
+  Americas: "americas_song.mp3",
+  Asia: "asia_song.mp3",
+  Europe: "europe_song.mp3",
+  Oceania: "oceania_song.mp3",
+};
+function playRegionSong(region) {
+  const audio = document.getElementById("backgroundAudio");
+  const regionSong = regionSongs[region];
+  if (regionSong) {
+    audio.src = regionSong;
+    audio.play();
+  }
+}
 // Function to change background image
 function changeBackground(region) {
   const background = regionBackgrounds[region];
@@ -95,12 +109,23 @@ regionSelect.addEventListener("change", function () {
   const selectedRegion = regionSelect.value;
   if (selectedRegion) {
     changeBackground(selectedRegion);
+    playRegionSong(selectedRegion);
   } else {
     // If no region selected, set default background
     document.body.style.backgroundImage = "none";
+    // Pause the audio if no region selected
+    document.getElementById("backgroundAudio").pause();
   }
 });
-
+function playCountrySong(country) {
+  // Logic to determine country-specific song
+  const countrySong = "your_country_song.mp3";
+  const audio = document.getElementById("backgroundAudio");
+  if (countrySong) {
+    audio.src = countrySong;
+    audio.play();
+  }
+}
 // Initial country fetch examples
 getCountry("thailand");
 getCountry("japan");
