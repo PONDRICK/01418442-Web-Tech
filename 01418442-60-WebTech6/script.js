@@ -54,6 +54,7 @@ const getCountry = function (country) {
         </article>`;
       countries.insertAdjacentHTML("beforeend", html);
       countries.style.opacity = 1;
+      changeBackground(data.region);
     } else {
       console.error("Failed to fetch country data");
     }
