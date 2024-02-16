@@ -20,6 +20,9 @@ body {
   min-height: 100vh;
   display: flex;
   justify-content: center;
+  background-image: url("ชื่อภาพ.gif"); /* เพิ่ม background-image ที่นี่ */
+  background-size: cover; /* กำหนดให้ภาพปรับขนาดให้เต็มพื้นที่ของ <body> */
+  background-attachment: fixed; /* กำหนดให้ภาพพื้นหลังติดตามหน้าจอและไม่เคลื่อนไหว */
 }
 
 nav {
